@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 public class userModel {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer userId;
     private String userName;
     private String userEmail;
@@ -26,7 +26,7 @@ public class userModel {
     public userModel(String userName, String userEmail, String password, String userContact, String userAddress, String sysCreationDate, String sysUpdationDate, String aadharCard, boolean isUserActive, String userAuthority) {
         this.userName = userName;
         this.userEmail = userEmail;
-        Password = password;
+        this.Password = password;
         this.userContact = userContact;
         this.userAddress = userAddress;
         this.sysCreationDate = sysCreationDate;

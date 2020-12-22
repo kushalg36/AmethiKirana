@@ -4,5 +4,8 @@ import com.amethikirana.AmethiKirana.User.Model.userModel;
 
 public interface UserService {
 
-//    public void AddUser();
+    public void addUser(userModel user);
+
+    public void updateUser(userModel user, Integer Id);
+
 }
