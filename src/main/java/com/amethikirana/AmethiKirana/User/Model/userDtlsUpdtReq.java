@@ -1,8 +1,5 @@
 package com.amethikirana.AmethiKirana.User.Model;
 
-import org.hibernate.annotations.GeneratorType;
-import org.hibernate.annotations.ManyToAny;
-
 import javax.persistence.*;
 
 @Entity
@@ -10,7 +7,7 @@ public class userDtlsUpdtReq {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer updateId;
-    private String updationDetails;
+    private String updateDetails;
     private String sysCreationDate;
     @ManyToOne
     private userModel userModelId;
@@ -18,8 +15,8 @@ public class userDtlsUpdtReq {
     public userDtlsUpdtReq() {
     }
 
-    public userDtlsUpdtReq(String updationDetails, String sysCreationDate) {
-        this.updationDetails = updationDetails;
+    public userDtlsUpdtReq(String updateDetails, String sysCreationDate) {
+        this.updateDetails = updateDetails;
         this.sysCreationDate = sysCreationDate;
     }
 
@@ -31,12 +28,12 @@ public class userDtlsUpdtReq {
         this.updateId = updateId;
     }
 
-    public String getUpdationDetails() {
-        return updationDetails;
+    public String getUpdateDetails() {
+        return updateDetails;
     }
 
-    public void setUpdationDetails(String updationDetails) {
-        this.updationDetails = updationDetails;
+    public void setUpdateDetails(String updateDetails) {
+        this.updateDetails = updateDetails;
     }
 
     public String getSysCreationDate() {
