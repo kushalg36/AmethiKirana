@@ -16,6 +16,10 @@ public class UserResource {
     }
 
     @GetMapping("/signup")
+    /*
+    TODO
+    -> connect with front-end
+     */
     public String signUpForm() {
         return("SignUpForm");
     }
@@ -26,12 +30,16 @@ public class UserResource {
     }
 
     @GetMapping("/update/{id}")
+    /*
+    TODO
+    -> connect with front-end
+     */
     public String updateForm() {
         return("UpdateForm");
     }
 
     @PutMapping("/update/{id}")
-    public void updateDetails(@RequestBody userModel user, @PathVariable("id") Integer Id) {
+    public void updateDetails(@RequestBody userModel user, @PathVariable("id") Integer Id) throws Exception {
         userService.updateUser(user, Id);
     }
 

@@ -22,7 +22,7 @@ public class UserDetailsModel implements UserDetails {
     public UserDetailsModel(userModel user) {
         this.userName = user.getUserName();
         this.password = user.getPassword();
-        this.active = user.getIsUserActive();
+        this.active = user.isUserActive();
         this.authorities = Arrays.stream(user.getUserAuthority().split(","))
         .map(SimpleGrantedAuthority::new)
         .collect(Collectors.toList());

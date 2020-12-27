@@ -1,0 +1,56 @@
+package com.amethikirana.AmethiKirana.Product.Service;
+
+
+import com.amethikirana.AmethiKirana.Product.Model.ProductModel;
+import com.amethikirana.AmethiKirana.Product.Repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+    @Autowired
+    ProductRepository productRepository;
+
+    @Override
+    public void addProduct(ProductModel productModel) {
+        productRepository.save(productModel);
+    }
+
+    @Override
+    public void updateProduct(ProductModel productModel, Integer Id) {
+        productRepository.save(productModel);
+    }
+
+    @Override
+    public void deleteProduct(ProductModel productModel, Integer Id) {
+        productRepository.deleteById(Id);
+    }
+
+    @Override
+    public Optional<ProductModel> getProductWithId(Integer Id) {
+        Optional<ProductModel> productById = productRepository.findById(Id);
+        return productById;
+    }
+
+    @Override
+    public Optional<List<ProductModel>> getProductWithCategory(String category) {
+        Optional<List<ProductModel>> productByCategory = productRepository.findByCategoryName(category);
+        return productByCategory;
+    }
+
+    @Override
+    public Optional<List<ProductModel>> getProductWithTag(String tag) {
+        Optional<List<ProductModel>> productByTag = productRepository.findByTagName(tag);
+        return productByTag;
+    }
+
+    @Override
+    public Optional<List<ProductModel>> getProductWithSellerId(String productSellerId) {
+        Optional<List<ProductModel>> productBySellerId = productRepository.findByProductSellerId(productSellerId);
+        return productBySellerId;
+    }
+}

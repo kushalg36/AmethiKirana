@@ -6,6 +6,6 @@ public interface UserService {
 
     public void addUser(userModel user);
 
-    public void updateUser(userModel user, Integer Id);
+    public void updateUser(userModel user, Integer Id) throws Exception;
 
 }
