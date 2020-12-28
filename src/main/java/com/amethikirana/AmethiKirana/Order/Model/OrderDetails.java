@@ -14,9 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class OrderDetails {
-    @OneToOne
     private Integer userId;
-    @OneToOne
     private Integer productId;
     @CreationTimestamp
     private Date transactionDate;

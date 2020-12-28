@@ -19,7 +19,7 @@ public class ProductResource {
     @PostMapping("/products")
     public void AddProduct(@RequestBody ProductModel productModel, Authentication authentication) {
         userModel user =(userModel) authentication.getPrincipal();
-        productModel.setProductSellerId(user.getUserId());
+        productModel.setProductSellerId(String.valueOf(user.getUserId()));
         productService.addProduct(productModel);
     }
 

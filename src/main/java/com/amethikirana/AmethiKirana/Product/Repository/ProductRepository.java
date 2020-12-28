@@ -12,6 +12,6 @@ public interface ProductRepository extends JpaRepository<ProductModel, Integer> 
     Optional<List<ProductModel>> findByCategoryName(String categoryName);
     Optional<List<ProductModel>> findByTagName(String tagName);
     Optional<List<ProductModel>> findByProductSellerId(String productSellerId);
-    @Query("SELECT A.PRODUCT_NAME FROM PRODUCT_MODEL WHERE A.PRODUCT_SELLER_ID = :SELLER")
+    @Query("SELECT A.productName FROM ProductModel A WHERE A.productSellerId = :SELLER")
     Optional<List<String>> findProductsBySeller(@Param("SELLER") String seller);
 }

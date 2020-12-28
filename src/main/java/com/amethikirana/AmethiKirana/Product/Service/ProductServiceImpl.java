@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
         String newProduct = productModel.getProductName();
         long countOfExistingProdBySeller = productsBySeller.stream().filter(s -> s.equals(newProduct)).count();
         if(countOfExistingProdBySeller>0) {
-            throw new AuthException("Item already exists in the warehouse");
+            throw new AuthException("Item already exists under your store");
         }
         productRepository.save(productModel);
     }
