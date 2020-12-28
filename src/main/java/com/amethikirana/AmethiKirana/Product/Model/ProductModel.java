@@ -22,7 +22,7 @@ public class ProductModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
     private String productName;
-    private Integer productSellerId;
+    private String productSellerId;
     private String productCostPrice;
     private String productSellPrice;
     private Integer productCount;

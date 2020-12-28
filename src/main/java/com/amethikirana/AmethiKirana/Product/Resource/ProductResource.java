@@ -38,12 +38,12 @@ public class ProductResource {
         return productService.getProductWithId(Id);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public Optional<List<ProductModel>> getProductWithCategory(@PathVariable String category) {
         return productService.getProductWithCategory(category);
     }
 
-    @GetMapping("/{tag}")
+    @GetMapping("/tag   /{tag}")
     public Optional<List<ProductModel>> getProductWithTag(@PathVariable String tag) {
         return productService.getProductWithTag(tag);
     }
