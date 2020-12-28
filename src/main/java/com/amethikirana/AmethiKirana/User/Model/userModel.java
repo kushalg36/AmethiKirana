@@ -29,7 +29,6 @@ public class userModel {
     @UpdateTimestamp
     private Date sysUpdationDate;
     private String aadharCard;
-    private boolean isUserActive;
     @Column(table = "userAuthorities")
     private String userAuthority;
 }

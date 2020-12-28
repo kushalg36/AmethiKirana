@@ -1,5 +1,6 @@
 package com.amethikirana.AmethiKirana.Product.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,13 +22,11 @@ public class ProductModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
     private String productName;
-    @OneToOne
     private Integer productSellerId;
     private String productCostPrice;
     private String productSellPrice;
-    private String tagId;
-    private String categoryId;
     private Integer productCount;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private Date productExpDate;
     private String productColor;
     private String productWeight;

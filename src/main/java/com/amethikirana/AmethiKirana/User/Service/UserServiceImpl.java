@@ -65,6 +65,7 @@ public class UserServiceImpl implements UserService {
         }
         user.setUserId(Id);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setSysCreationDate(userRepository.findById(Id).get().getSysCreationDate());
         userRepository.save(user);
     }
 }
